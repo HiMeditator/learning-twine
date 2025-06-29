@@ -2,7 +2,8 @@
     <img src="./img/media/twine.svg" width="100px" height="100px"/>
     <img src="./img/media/sugarcube.svg" width="100px" height="100px"/>
     <h1 align="center">learning-twine-with-sugarcube</h1>
-    <p>This project aims to provide a comprehensive example of using Twine with SugarCube as the story format and Tweego for compilation.</p>
+    <p>This project is primarily for personal use and includes a sample Twine project that uses SugarCube as the story format and is compiled with Tweego.
+</p>
     <p>
         | <a href="./README.md">简体中文</a>
         | <b>English</b> |
@@ -20,16 +21,7 @@ To better understand this project, it is necessary to have a certain level of un
 - **CSS**: Cascading Style Sheets, used to define the layout and appearance of web pages.
 - **JavaScript**: A programming language used to implement interactive features on web pages.
 
-
 ## 🌐 Sample Webpage
-
-Not available yet.
-
-## 📚 Project Introduction Manual
-
-Not available yet.
-
-## ✨ Features
 
 Not available yet.
 
@@ -51,6 +43,7 @@ Selected Content:
 npm run compile
 # Or directly run the compilation script
 ./compile.bat
+# Press F5 or Ctrl+F5 to compile on VS Code, for Windows
 ```
 
 ### Open the Webpage

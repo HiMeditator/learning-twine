@@ -2,7 +2,7 @@
     <img src="./img/media/twine.svg" width="100px" height="100px"/>
     <img src="./img/media/sugarcube.svg" width="100px" height="100px"/>
     <h1 align="center">learning-twine-with-sugarcube</h1>
-    <p>本项目尝试提供一个功能详尽的，使用 SugarCube 作为故事格式，使用 Tweego 进行编译的 Twine 样例。</p>
+    <p>本项目主要是个人使用，其中构建了一个使用 SugarCube 作为故事格式，使用 Tweego 进行编译的 Twine 样例。</p>
     <p>
         | <b>简体中文</b>
         | <a href="./README_en.md">English</a> |
@@ -24,14 +24,6 @@
 
 暂无
 
-## 📚 项目介绍手册
-
-暂无
-
-## ✨ 特性
-
-暂无
-
 ## 🚀 项目运行
 
 ### 安装依赖
@@ -49,6 +41,7 @@ npm install
 npm run compile
 # 或者直接运行编译脚本
 ./compile.bat
+# 在 Windows + VS Code 环境下，按 F5 或 Ctrl+F5 进行编译
 ```
 
 ### 打开网页

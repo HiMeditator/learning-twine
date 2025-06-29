@@ -12,7 +12,25 @@ Learning Twine with SugarCube
 
 :: Home
 
-欢迎来到 Twine，本项目的内容和 SugarCube 官方文档 <a href="https://www.motoslave.net/sugarcube/2/docs/" target="_blank">SugarCube v2 Documentation</a> 有着较好的对应关系，你可以基于该文档学习对应知识，基于该项目查看对应的代码实现。
+<details close><summary>English</summary>
+Welcome to this project, which is based on the official SugarCube documentation: <a href="https://www.motoslave.net/sugarcube/2/docs/" target="_blank">SugarCube v2 Documentation</a>. This project will only cover the content that I personally need to experiment with and will not include everything.
+
+Note:
+
+1. This project will only provide the code and corresponding results for each topic, without detailed explanations of the topics themselves.
+
+2. For detailed information on each topic, please refer to the official documentation.
+
+3. For examples with multiple parameters where some parameters can be omitted, only the examples with all parameters will be provided.
+
+<div class="exec">4. Content wrapped in this style refers to the actual text content of the code that has been executed on the page.</div>
+<div class="code">5. Content wrapped in this style refers to the source code, not the result of running the code.</div>
+<div class="result">6. Content wrapped in this style shows the result of running the code.</div>
+7. The above styles will only appear in the first three sections (NakedVariable, Link, Image) under CoreIndex. Subsequent sections will directly present the results of the code, without including the original text of the code.
+</details>
+
+<details close><summary>简体中文</summary>
+欢迎来到本项目，本项目的内容基于SugarCube 官方文档 <a href="https://www.motoslave.net/sugarcube/2/docs/" target="_blank">SugarCube v2 Documentation</a> 编写。本项目只会编写对我个人来说需要实验的内容，不会编写所有内容。
 
 注意：
 
@@ -25,9 +43,9 @@ Learning Twine with SugarCube
 <div class="exec">4. 由该样式包裹的内容是在页面中实际执行过的代码对应的文本内容</div>
 <div class="code">5. 由该样式包裹的内容指的代码源内容，而不是该段代码运行的结果</div>
 <div class="result">6. 由该样式包裹的内容展示的是代码运行得到的结果</div>
-
-一级目录：
-
-[[核心|CoreIndex]]
-[[API|API-Index]]
-[[指南|GuideIndex]]
+7. 以上样式只会在 CoreIndex 下的前三节（NakedVariable、Link、Image）全部出现，后续将直接写代码，页面展示的将是代码执行的结果，不再代码的原本内容
+</details>
+<hr>
+[[CoreIndex]]
+[[API-Index]]
+[[GuideIndex]]

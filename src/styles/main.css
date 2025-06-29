@@ -1,3 +1,15 @@
+summary {
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+summary::before {
+    content: "👉";
+}
+details[open] > summary::before {
+    content: "👀";
+}
+
 .exec, .code, .result {
     padding: 10px;
     border-radius: 10px;
