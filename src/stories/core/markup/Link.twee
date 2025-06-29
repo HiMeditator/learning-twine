@@ -1,0 +1,17 @@
+:: Link
+<code>
+| Syntax                  | Example                                                      |
+| """[[Link]]"""              | """[[Grocery]]"""<br>"""[[$go]]"""                              |
+| """[[Text|Link]]"""         | """[[Go buy milk|Grocery]]"""<br>"""[[$show|$go]]"""            |
+| """[[Link][Setter]]"""      | """[[Grocery][$bought to "milk"]]"""<br>"""[[$go][$bought to "milk"]]""" |
+| """[[Text|Link][Setter]]""" | """[[Go buy milk|Grocery][$bought to "milk"]]"""<br>"""[[$show|$go][$bought to "milk"]]""" |
+</code>
+<<set $target = "ResultDisplay">><<set $show = "Goto ResultDisplay Page">>
+<div class="exec">"""<<set $target = "ResultDisplay">><<set $show = "Goto ResultDisplay Page">>"""
+</div>
+<div class="code">"""[[Goto ResultDisplay Page|ResultDisplay][$result = "From Link Page"]]"""
+"""[[$show|$target][$result = "From Link Page"]]"""
+</div>
+<div class="result">[[Goto ResultDisplay Page|ResultDisplay][$result = "From Link Page"]]
+[[$show|$target][$result = "From Link Page"]]
+</div>

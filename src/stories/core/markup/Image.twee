@@ -1,0 +1,26 @@
+:: Image
+
+<code>
+| Syntax | Example |
+| """[img[Image]]""" | """[img[home.png]]"""<br>"""[img[$src]]""" |
+| """[img[Image][Link]]""" | """[img[home.png][Home]]"""<br>"""[img[$src][$go]]""" |
+| """[img[Image][Link][Setter]]""" | """[img[home.png][Home][$done to true]]"""<br>"""[img[$src][$go][$done to true]]""" |
+| """[img[Title|Image]]""" | """[img[Go home|home.png]]"""<br>"""[img[$show|$src]]""" |
+| """[img[Title|Image][Link]]""" | """[img[Go home|home.png][Home]]"""<br>"""[img[$show|$src][$go]]""" |
+| """[img[Title|Image][Link][Setter]]""" | """[img[Go home|home.png][Home][$done to true]]"""<br>"""[img[$show|$src][$go][$done to true]]""" |
+</code>
+<<nobr>>
+    <<set $target = "ResultDisplay">>
+    <<set $show = "Goto ResultDisplay Page">>
+    <<set $src="img/head/01.png">>
+<</nobr>>
+<div class="exec">"""<<set $target = "ResultDisplay">>"""
+"""<<set $show = "Goto ResultDisplay Page">>"""
+"""<<set $src="img/head/01.png">>"""
+</div>
+<div class="code">"""[img[Goto ResultDisplay Page|img/head/01.png][ResultDisplay][$result = "From Image Page"]]"""
+"""[img[$show|$src][$target][$result = "From Image Page"]]"""
+</div>
+<div class="result">[img[Goto ResultDisplay Page|img/head/01.png][ResultDisplay][$result = "From Image Page"]]
+[img[$show|$src][$target][$result = "From Image Page"]]
+</div>

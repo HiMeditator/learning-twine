@@ -12,6 +12,22 @@ Learning Twine with SugarCube
 
 :: Home
 
-Hello, this is main page.
+欢迎来到 Twine，本项目的内容和 SugarCube 官方文档 <a href="https://www.motoslave.net/sugarcube/2/docs/" target="_blank">SugarCube v2 Documentation</a> 有着较好的对应关系，你可以基于该文档学习对应知识，基于该项目查看对应的代码实现。
 
-[[Page1]]
+注意：
+
+1. 本项目只会给出每个知识点对应的代码和对应的结果，对于知识点本身不会详细介绍
+
+2. 每节知识点的介绍的详细内容请自行查看官方文档
+
+3. 对于有多个参数且部分参数可省略的样例，只会给出有完整参数的样例
+
+<div class="exec">4. 由该样式包裹的内容是在页面中实际执行过的代码对应的文本内容</div>
+<div class="code">5. 由该样式包裹的内容指的代码源内容，而不是该段代码运行的结果</div>
+<div class="result">6. 由该样式包裹的内容展示的是代码运行得到的结果</div>
+
+一级目录：
+
+[[核心|CoreIndex]]
+[[API|API-Index]]
+[[指南|GuideIndex]]

@@ -1,0 +1,34 @@
+:: NakedVariable
+<code>
+| Type | Syntax | Example |
+| Simple variable | """$variable""" | """$name""" |
+| Property access, dot notation | """$variable.property""" | """$thing.name""" |
+| Index/property access, square bracket notation | """$variable[numericIndex]""" <br>"""$variable["property"]""" <br>"""$variable['property']""" <br>"""$variable[$indexOrPropertyVariable]""" | """$thing[0]""" <br>"""$thing["name"]""" <br>"""$thing['name']""" <br>"""$thing[$member]""" |
+</code>
+<<set $name = "Mr. Freeman">>
+<div class="exec">"""<<set $name = "Mr. Freeman">>"""
+</div>
+<div class="code">Well hello there, <nowiki><<print $name>></nowiki>.
+Well hello there, <nowiki>$name</nowiki>.
+Well hello there, Mr. Freeman.
+</div>
+<div class="result">Well hello there, <<print $name>>.
+Well hello there, $name.
+Well hello there, Mr. Freeman.
+</div>
+<div class="code"><nowiki>The variable """$name""" is set to: $name</nowiki>
+"""The variable <nowiki>$name</nowiki> is set to: $name"""
+"""The variable $$name is set to: $name"""
+"""The variable $name is set to: Mr. Freeman"""
+</div>
+<div class="result">The variable """$name""" is set to: $name
+The variable <nowiki>$name</nowiki> is set to: $name
+The variable $$name is set to: $name
+The variable $name is set to: Mr. Freeman
+</div>
+<div class="code"><nowiki>The variable {{{$name}}} is set to: $name</nowiki>
+<nowiki>The variable <code>$name</code> is set to: Mr. Freeman</nowiki>
+</div>
+<div class="result">The variable {{{$name}}} is set to: $name
+The variable <code>$name</code> is set to: Mr. Freeman
+</div>

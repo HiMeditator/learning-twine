@@ -5,7 +5,7 @@
     <p>本项目尝试提供一个功能详尽的，使用 SugarCube 作为故事格式，使用 Tweego 进行编译的 Twine 样例。</p>
     <p>
         | <b>简体中文</b>
-        | <a href="https://github.com/HiMeditator/auto-caption/blob/main/README_en.md">English</a> |
+        | <a href="./README_en.md">English</a> |
     </p>
 </div>
 

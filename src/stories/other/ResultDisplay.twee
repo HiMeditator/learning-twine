@@ -1,0 +1,4 @@
+:: ResultDisplay
+
+<div class="code">The value of $$result is:</div>
+<div class="result">$result</div>
