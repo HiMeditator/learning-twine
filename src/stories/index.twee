@@ -1,0 +1,17 @@
+:: StoryTitle
+Learning Twine with SugarCube
+
+:: StoryData
+{
+  "ifid": "10114455-8B9F-4C93-9206-5D32EDF8B21C",
+  "format": "SugarCube",
+  "format-version": "2.37.3",
+  "start": "Home",
+  "zoom": 1
+}
+
+:: Home
+
+Hello, this is main page.
+
+[[Page1]]

@@ -1,0 +1,1 @@
+// Config.history.controls = false;

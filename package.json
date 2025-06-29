@@ -1,0 +1,14 @@
+{
+  "name": "learning-twine-with-sugarcube",
+  "version": "1.0.0",
+  "description": "Learning Twine with SugarCube",
+  "license": "",
+  "author": "himeditator",
+  "type": "commonjs",
+  "main": "",
+  "scripts": {
+    "compile": "compile.bat",
+    "open": "main.html",
+    "both": "npm run compile && npm run open"
+  }
+}
