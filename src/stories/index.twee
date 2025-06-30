@@ -12,7 +12,7 @@ Learning Twine with SugarCube
 
 :: Home
 
-<details close><summary>English</summary>
+<details open><summary>English</summary>
 Welcome to this project, which is based on the official SugarCube documentation: <a href="https://www.motoslave.net/sugarcube/2/docs/" target="_blank">SugarCube v2 Documentation</a>. This project will only cover the content that I personally need to experiment with and will not include everything.
 
 Note:
@@ -43,7 +43,7 @@ Note:
 <div class="exec">4. 由该样式包裹的内容是在页面中实际执行过的代码对应的文本内容</div>
 <div class="code">5. 由该样式包裹的内容指的代码源内容，而不是该段代码运行的结果</div>
 <div class="result">6. 由该样式包裹的内容展示的是代码运行得到的结果</div>
-7. 以上样式只会在 CoreIndex 下的前三节（NakedVariable、Link、Image）全部出现，后续将直接写代码，页面展示的将是代码执行的结果，不再代码的原本内容
+7. 以上样式只会在 CoreIndex 下的前三节（NakedVariable、Link、Image）全部出现，后续将直接写代码，页面展示的将是代码执行的结果，不再有代码的原本内容
 </details>
 <hr>
 [[CoreIndex]]

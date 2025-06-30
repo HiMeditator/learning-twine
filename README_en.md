@@ -2,7 +2,8 @@
     <img src="./img/media/twine.svg" width="100px" height="100px"/>
     <img src="./img/media/sugarcube.svg" width="100px" height="100px"/>
     <h1 align="center">learning-twine-with-sugarcube</h1>
-    <p>This project is primarily for personal use and includes a sample Twine project that uses SugarCube as the story format and is compiled with Tweego.
+    <p>This project is primarily for personal use and includes a sample Twine project that uses SugarCube as the story format and is compiled with Tweego. If you are interested in this project, you might also learn something from it.
+
 </p>
     <p>
         | <a href="./README.md">简体中文</a>
@@ -11,6 +12,8 @@
 </div>
 
 ## 📝 Background Knowledge
+
+This project is based on the official SugarCube documentation: <a href="https://www.motoslave.net/sugarcube/2/docs/" target="_blank">SugarCube v2 Documentation</a>. This project will only cover the content that I personally need to experiment with and will not include everything.
 
 To better understand this project, it is necessary to have a certain level of understanding of the following content.
 
