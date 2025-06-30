@@ -2,7 +2,7 @@
     <img src="./img/media/twine.svg" width="100px" height="100px"/>
     <img src="./img/media/sugarcube.svg" width="100px" height="100px"/>
     <h1 align="center">learning-twine-with-sugarcube</h1>
-    <p>本项目主要是个人使用，其中构建了一个使用 SugarCube 作为故事格式，使用 Tweego 进行编译的 Twine 样例。</p>
+    <p>本项目主要是个人使用，其中构建了一个使用 SugarCube 作为故事格式，使用 Tweego 进行编译的 Twine 样例。如果你对该项目感兴趣，你也可能从中学到一些知识。</p>
     <p>
         | <b>简体中文</b>
         | <a href="./README_en.md">English</a> |
@@ -10,6 +10,8 @@
 </div>
 
 ## 📝 背景知识
+
+本项目的内容基于SugarCube 官方文档 <a href="https://www.motoslave.net/sugarcube/2/docs/" target="_blank">SugarCube v2 Documentation</a> 编写。本项目只会编写对我个人来说需要实验的内容，不会编写所有内容。
 
 为了更好地理解该项目，需要对以下内容有一定了解。
 
