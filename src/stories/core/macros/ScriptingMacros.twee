@@ -1,0 +1,47 @@
+:: ScriptingMacros
+
+<h2>"""<<run expression>>"""</h2>\
+\
+功能上与"""<<set>>"""相同。适用于表达式是任意代码而不是要设置的变量的情况——即，"""<<run>>"""用于运行代码，"""<<set>>"""用于设置变量，在记忆上更好理解。
+Functionally identical to """<<set>>""". Intended to be mnemonically better for uses where the expression is arbitrary code, rather than variables to set—i.e., """<<run>>""" to run code, """<<set>>""" to set variables.
+
+<h2>"""<<script [language]>> … <</script>>"""</h2>\
+\
+静默执行其内容作为JavaScript或TwineScript代码（默认：JavaScript）。
+Silently executes its contents as either JavaScript or TwineScript code (default: JavaScript).
+
+注意： 预定义变量output（它是对本地内容缓冲区的引用）可在宏的代码内容中使用。一旦代码完全执行完毕，缓冲区的内容（如果有的话）将被输出。
+Note: The predefined variable output, which is a reference to a local content buffer, is available for use within the macro's code contents. Once the code has been fully executed, the contents of the buffer, if any, will be output.
+
+<<script>>
+    $(output).append("<h2>Time Display</h2>");
+    $(output).append("<p>Time: " + new Date().toLocaleString() + "</p>");
+<</script>>
+
+<<set $playerHealth to random(1,100)>>\
+<<script>>
+    const health = State.variables.playerHealth;
+    $(output).wiki("你当前有 " + health + " 点健康。");
+    if (health > 80) {
+        $(output).wiki("你感觉 ''非常健康''！");
+    } else if (health > 50) {
+        $(output).wiki("你感觉还 //不错//。");
+    } else {
+        $(output).wiki("你感觉很 ''虚弱''...");
+    }
+    
+    // 添加血条显示
+    $(output).append(`<div style="width:100px; height:20px; border:1px solid black;">
+                        <div style="width:${health}%; height:100%; background:red;"></div>
+                      </div>`);
+<</script>>
+
+<<set $inventory to ["剑", "盾牌", "药水", "钥匙"]>>\
+<<script>>
+    $(output).wiki("<nowiki>==背包物品==</nowiki>");
+    
+    const items = State.variables.inventory;
+    for (let i = 0; i < items.length; i++) {
+        $(output).wiki(`* ${items[i]}`);
+    }
+<</script>>

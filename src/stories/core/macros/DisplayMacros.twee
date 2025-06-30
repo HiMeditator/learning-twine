@@ -1,0 +1,177 @@
+:: DisplayMacros
+
+<h2>"""<<= expression>> and <<print expression>> and <<- expression>>"""</h2>\
+\
+<<set _gold = 5>>\
+You found <<= _gold>> gold.
+You found <<print _gold>> gold.
+You found <<- _gold>> gold.
+
+<<set _PI=3.141592653589793238>>\
+PI approximately equals <<= _PI.toFixed(2)>>.
+PI approximately equals <<print _PI.toFixed(2)>>.
+PI approximately equals <<- _PI.toFixed(2)>>.
+
+<<set _emoji='😊<^_^>'>>\
+You face: <<= _emoji>>.
+You face: <<print _emoji>>.
+You face: <<- _emoji>>.
+
+
+<h2>"""<<do [tag tags] [element tag]>> … <</do>> and <<redo [tags]>>"""</h2>\
+\
+显示其内容。监听 <<redo>> 宏命令，收到命令时更新其内容。
+Displays its contents. Listens for <<redo>> macro commands upon which it updates its contents.
+
+<<set _money to 10>>\
+''Money:'' <<do>>_money<</do>>
+\
+<<link "Update money display">>\
+	<<set _money += 10>>\
+	<<redo>>\
+<</link>>
+
+<<set _key to "">>
+<<do>>\
+	<<if _key>>\
+		You have the _key key.
+	<<else>>\
+		You do not have a key.
+	<</if>>\
+<</do>>\
+\
+<<link "Update key display">>\
+	<<set _key to ["", "red", "blue", "skull"].random()>>\
+	<<redo>>
+<</link>>
+
+
+''Foo:'' <<do tag "foo foobar">><<= ["fee", "fie", "foe", "fum"].random()>><</do>>
+''Bar:'' <<do tag "bar foobar">><<= ["alfa", "bravo", "charlie", "delta"].random()>><</do>>
+\
+<<link "Update foo">>\
+	<<redo "foo">>\
+<</link>>\
+<<link "Update bar">>\
+	<<redo "bar">>\
+<</link>>\
+<<link "Update foo & bar (1)">>\
+	<<redo "foo bar">>\
+<</link>>
+<<link "Update foo & bar (2)">>\
+	<<redo "foobar">>\
+<</link>>
+
+
+<h2>"""<<include passageName [elementName]>> and <<include linkMarkup [elementName]>>"""</h2>\
+\
+输出具有给定名称的段落的内容，可选择将其包装在 HTML 元素中。可以使用段落名称或链接标记来调用。
+Outputs the contents of the passage with the given name, optionally wrapping it within an HTML element. May be called either with the passage name or with a link markup.
+
+段落名称形式
+* passageName：要包含的段落名称。
+* elementName：（可选）包装所包含段落的 HTML 元素。如果使用，该元素将包含标准化为类名的段落名称。更多信息请参见 CSS 段落转换。
+Passage name form
+* passageName: The name of the passage to include.
+* elementName: (optional) The HTML element to wrap the included passage in. If used, the element will include the passage's name normalized into a class name. See CSS passage conversions for more information.
+
+链接标记形式
+* linkMarkup：要使用的链接标记（仅常规语法，无设置器）。
+* elementName：与段落名称形式相同。
+Link markup form
+* linkMarkup: The link markup to use (regular syntax only, no setters).
+* elementName: Identical to the passage name form.
+
+
+<<include "ResultDisplay">>
+<<include [[ResultDisplay]]>>
+<<include "ResultDisplay" "div">>
+<<include [[ResultDisplay]] "div">>
+
+
+<h2>"""<<nobr>> … <</nobr>>"""</h2>\
+\
+<<set _feeling to "blue">>\
+I'd like a <<nobr>>
+<<if _feeling eq "blue">>
+blueberry
+<<else>>
+cherry
+<</if>>
+<</nobr>> pie.
+
+<h2>"""<<silent>> … <</silent>>"""</h2>\
+\
+<<set _seconds to 20>>\
+Countdown: <span id="countdown">_seconds seconds remaining</span>!\
+<<silent>>
+	<<repeat 1s>>
+		<<set _seconds to _seconds - 1>>
+		<<if _seconds gt 0>>
+			<<replace "#countdown">>_seconds seconds remaining<</replace>>
+		<<else>>
+			<<replace "#countdown">>Too Late<</replace>>
+			/* do something useful here */
+			<<stop>>
+		<</if>>
+	<</repeat>>
+<</silent>>
+
+
+<h2>"""<<type speed [start delay] [class classes] [element tag] [id ID] [keep|none] [skipkey key]>>…<</type>>"""</h2>\
+\
+参数：
+* speed：字符打字的速率，作为有效的 CSS 时间值——例如，1s 和 40ms。20–60ms 范围内的值是一个好的起点。0s 和 0ms 的值会使打字立即完成。
+* start delay：（可选）延迟开始打字的时间量，作为有效的 CSS 时间值——例如，5s 和 500ms。如果省略，默认为 400ms。
+* class classes：（可选）要添加到打字容器的类列表，以空格分隔。
+* element tag：（可选）用作打字容器的元素——例如，div 和 span。如果省略，默认为 div。
+* id ID：（可选）要分配给打字容器的唯一 ID。
+* keep：（可选）关键字，用于表示打字完成后应保留光标。
+* none：（可选）关键字，用于表示根本不应使用光标。
+* skipkey：（可选）用于使打字立即完成的键。如果省略，默认为 Config.macros.typeSkipKey 的值。
+
+
+打字文本没有默认样式。如果你想更改字体或颜色，那么你需要更改 macro-type 类的样式。例如：
+<html><pre>
+css.macro-type {
+	color: limegreen;
+	font-family: monospace, monospace;
+}
+</pre></html>
+还有一个 macro-type-done 类会添加到已完成打字的文本中，可以用来为其设置与正在打字的文本不同的样式。
+默认光标是块元素字符 Right Half Block (U+2590)，它没有默认的字体或颜色样式。如果你想更改字体、颜色或字符，那么你需要更改 macro-type-cursor 类的 :after 伪元素的样式。例如：
+<html><pre>
+css.macro-type-cursor:after {
+	color: limegreen;
+	content: "\269C\FE0F"; /* Fleur-de-lis emoji */
+	font-family: monospace, monospace;
+}
+</pre></html>
+
+<<type 40ms>>
+	Type characters from this content every 40 milliseconds.  Including [[ResultDisplay]] and ''other markup''!
+<</type>>
+
+<<type 40ms start 2s>>
+	Type characters from this content every 40 milliseconds, starting after a 2 second delay.
+<</type>>
+
+<<type 40ms class "foo bar">>
+	Type characters from this content every 40 milliseconds, adding classes to the typing container.
+<</type>>
+
+<<type 40ms element "span">>
+	Type characters from this content every 40 milliseconds, using a """<span>""" as the typing container.
+<</type>>
+
+<<type 40ms id "type01">>
+	Type characters from this content every 40 milliseconds, assigning an ID to the typing container.
+<</type>>
+
+<<type 40ms keep>>
+	Type characters from this content every 40 milliseconds, keeping the cursor after typing is complete.
+<</type>>
+
+<<type 40ms skipkey "Control">>
+	Type characters from this content every 40 milliseconds, using the Control (CTRL) key as the skip key.
+<</type>>

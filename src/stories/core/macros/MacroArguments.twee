@@ -1,0 +1,22 @@
+:: MacroArguments
+
+<details>\
+<summary>参数类型宏：将变量名作为参数传递</summary>\
+将变量名作为参数传递是有问题的，因为在 SugarCube 宏中变量替换是自动发生的。这意味着当您将变量作为参数传递时，它的值被传递给宏而不是它的名称。
+通常，这正是您想要发生的。然而，偶尔宏会需要变量的名称而不是它的值——例如，数据输入宏如 """<<textbox>>"""——以便它们可以修改变量。要解决这些情况，您需要引用变量的名称——即，不是像平常那样传递 """$pie"""，而是传递 <nowiki>"$pie"</nowiki>。这些罕见的情况在宏的文档中有说明，并在示例中展示。
+</details>
+
+<details>\
+<summary>Argument type macros: passing a variable's name as an argument</summary>\
+Passing the name of a variable as an argument is problematic because variable substitution occurs automatically in SugarCube macros. Meaning that when you pass a variable as an argument, its value is passed to the macro rather than its name.
+Normally, this is exactly what you want to happen. Occasionally, however, macros will need the name of a variable rather than its value—e.g., data input macros like """<<textbox>>"""—so that they may modify the variable. To resolve these instances, you will need to quote the name of the variable—i.e., instead of passing """$pie""" as normal, you'd pass <nowiki>"$pie"</nowiki>. These, rare, instances are noted in the macros' documentation and shown in their examples.
+</details>
+
+<hr>
+
+<h2>参数类型宏：将表达式作为参数传递 Argument type macros: passing an expression as an argument</h2>\
+
+<<set _name = "Target">>\
+<<set _target = _name + "Display">>\
+<<link _target>><</link>>
+<<link `_name + "Dispay"`>><</link>>

@@ -104,7 +104,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://10114455-8B9F-4C93-9206-5D32EDF8B21C// --><tw-storydata name="Learning Twine with SugarCube" startnode="20" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="10114455-8B9F-4C93-9206-5D32EDF8B21C" zoom="1" format="SugarCube" format-version="2.37.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* twine-user-stylesheet #1: "main.css" */
+	<!-- UUID://10114455-8B9F-4C93-9206-5D32EDF8B21C// --><tw-storydata name="Learning Twine with SugarCube" startnode="25" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="10114455-8B9F-4C93-9206-5D32EDF8B21C" zoom="1" format="SugarCube" format-version="2.37.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* twine-user-stylesheet #1: "main.css" */
 summary {
     font-size: 24px;
     font-weight: bold;
@@ -190,7 +190,367 @@ Template.add('greetingTimeEN', function () {
     [[CustomStyle]]
     [[TemplatePage]]
     [[CommentPage]]
-&lt;/details&gt;</tw-passagedata><tw-passagedata pid="3" name="BlockquotePage" tags="" position="350,100" size="100,100">&gt;Line 1
+&lt;/details&gt;
+
+&lt;details open&gt;\
+    &lt;summary&gt;TwineScript&lt;/summary&gt;\
+    这部分和 JavaScript 语法高度相似，因此我没有在这部分添加任何页面。
+    This part is highly similar to JavaScript syntax, so I did not add any pages for this section.
+&lt;/details&gt;
+
+&lt;details open&gt;\
+    &lt;summary&gt;Macros&lt;/summary&gt;\
+    [[MacroArguments]]
+    [[VariablesMacros]]
+    [[ScriptingMacros]]
+    [[DisplayMacros]]
+    [[ControlMacros]]
+&lt;/details&gt;</tw-passagedata><tw-passagedata pid="3" name="ControlMacros" tags="" position="350,100" size="100,100">&lt;h2&gt;&quot;&quot;&quot;&lt;&lt;if conditional&gt;&gt; … [&lt;&lt;elseif conditional&gt;&gt; …] [&lt;&lt;else&gt;&gt; …] &lt;&lt;/if&gt;&gt;&quot;&quot;&quot;&lt;/h2&gt;
+
+SugarCube 不会自动去除 &quot;&quot;&quot;&lt;&lt;if&gt;&gt;&quot;&quot;&quot; 宏内容中的空白字符，以便作者可以更灵活地控制输出中的空格。这也意味着在编写时需要特别注意不要生成多余的空白。
+
+&lt;&lt;set _affection to random(1,100)&gt;&gt;\
+Your affection points are _affection.
+&lt;&lt;if _affection gte 75&gt;&gt;\
+	I love you!
+&lt;&lt;elseif _affection gte 50&gt;&gt;\
+	I like you.
+&lt;&lt;elseif _affection gte 25&gt;&gt;\
+	I&#39;m okay with you.
+&lt;&lt;else&gt;&gt;\
+	Get out of my face.
+&lt;&lt;/if&gt;&gt;
+
+
+&lt;h2&gt;&quot;&quot;&quot;&lt;&lt;for [conditional]&gt;&gt; … &lt;&lt;/for&gt;&gt;&quot;&quot;&quot;&lt;/h2&gt;\
+&lt;h2&gt;&quot;&quot;&quot;&lt;&lt;for [init] ; [conditional] ; [post]&gt;&gt; … &lt;&lt;/for&gt;&gt;&quot;&quot;&quot;&lt;/h2&gt;\
+&lt;h2&gt;&quot;&quot;&quot;&lt;&lt;for [[keyVariable ,] valueVariable] range collection&gt;&gt; … &lt;&lt;/for&gt;&gt;&quot;&quot;&quot;&lt;/h2&gt;\
+\
+&lt;&lt;set $dwarves to [&quot;Doc&quot;, &quot;Dopey&quot;, &quot;Bashful&quot;, &quot;Grumpy&quot;, &quot;Sneezy&quot;, &quot;Sleepy&quot;, &quot;Happy&quot;]&gt;&gt;
+&lt;&lt;for _i to 0; _i lt $dwarves.length; _i++&gt;&gt;\
+    &lt;&lt;print _i + 1&gt;&gt;. $dwarves[_i]
+&lt;&lt;/for&gt;&gt;
+
+&lt;&lt;for _i, _name range $dwarves&gt;&gt;\
+    &lt;&lt;if _name === &quot;Sleepy&quot;&gt;&gt;\
+        &lt;&lt;continue&gt;&gt;\
+    &lt;&lt;/if&gt;&gt;\
+    &lt;&lt;print _i + 1&gt;&gt;. _name
+&lt;&lt;/for&gt;&gt;
+
+&lt;&lt;for _value range 7&gt;&gt;\
+    &lt;&lt;print _value&gt;&gt;.
+    &lt;&lt;if _value === 4&gt;&gt;\
+        &lt;&lt;break&gt;&gt;\
+    &lt;&lt;/if&gt;&gt;\
+&lt;&lt;/for&gt;&gt;
+
+
+&lt;h2&gt;&quot;&quot;&quot;&lt;&lt;switch expression&gt;&gt; [&lt;&lt;case valueList&gt;&gt; …] [&lt;&lt;default&gt;&gt; …] &lt;&lt;/switch&gt;&gt;&quot;&quot;&quot;&lt;/h2&gt;\
+\
+&lt;&lt;set _vis to random(1, 5)&gt;&gt;
+You have visited this place for _vis times.
+&lt;&lt;switch _vis&gt;&gt;\
+&lt;&lt;case 1&gt;&gt;\
+	You gaze in wonder at the magnificent waterfall for the first time, awestruck by its natural beauty.
+&lt;&lt;case 2 3&gt;&gt;\
+	You once again gaze upon the magnificent waterfall.
+&lt;&lt;case 4 5&gt;&gt;\
+	Yet again, you find yourself looking upon the waterfall.
+&lt;&lt;default&gt;&gt;\
+	Oh, look.  It&#39;s that waterfall again.  Meh.
+&lt;&lt;/switch&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="DisplayMacros" tags="" position="475,100" size="100,100">&lt;h2&gt;&quot;&quot;&quot;&lt;&lt;= expression&gt;&gt; and &lt;&lt;print expression&gt;&gt; and &lt;&lt;- expression&gt;&gt;&quot;&quot;&quot;&lt;/h2&gt;\
+\
+&lt;&lt;set _gold = 5&gt;&gt;\
+You found &lt;&lt;= _gold&gt;&gt; gold.
+You found &lt;&lt;print _gold&gt;&gt; gold.
+You found &lt;&lt;- _gold&gt;&gt; gold.
+
+&lt;&lt;set _PI=3.141592653589793238&gt;&gt;\
+PI approximately equals &lt;&lt;= _PI.toFixed(2)&gt;&gt;.
+PI approximately equals &lt;&lt;print _PI.toFixed(2)&gt;&gt;.
+PI approximately equals &lt;&lt;- _PI.toFixed(2)&gt;&gt;.
+
+&lt;&lt;set _emoji=&#39;😊&lt;^_^&gt;&#39;&gt;&gt;\
+You face: &lt;&lt;= _emoji&gt;&gt;.
+You face: &lt;&lt;print _emoji&gt;&gt;.
+You face: &lt;&lt;- _emoji&gt;&gt;.
+
+
+&lt;h2&gt;&quot;&quot;&quot;&lt;&lt;do [tag tags] [element tag]&gt;&gt; … &lt;&lt;/do&gt;&gt; and &lt;&lt;redo [tags]&gt;&gt;&quot;&quot;&quot;&lt;/h2&gt;\
+\
+显示其内容。监听 &lt;&lt;redo&gt;&gt; 宏命令，收到命令时更新其内容。
+Displays its contents. Listens for &lt;&lt;redo&gt;&gt; macro commands upon which it updates its contents.
+
+&lt;&lt;set _money to 10&gt;&gt;\
+&#39;&#39;Money:&#39;&#39; &lt;&lt;do&gt;&gt;_money&lt;&lt;/do&gt;&gt;
+\
+&lt;&lt;link &quot;Update money display&quot;&gt;&gt;\
+	&lt;&lt;set _money += 10&gt;&gt;\
+	&lt;&lt;redo&gt;&gt;\
+&lt;&lt;/link&gt;&gt;
+
+&lt;&lt;set _key to &quot;&quot;&gt;&gt;
+&lt;&lt;do&gt;&gt;\
+	&lt;&lt;if _key&gt;&gt;\
+		You have the _key key.
+	&lt;&lt;else&gt;&gt;\
+		You do not have a key.
+	&lt;&lt;/if&gt;&gt;\
+&lt;&lt;/do&gt;&gt;\
+\
+&lt;&lt;link &quot;Update key display&quot;&gt;&gt;\
+	&lt;&lt;set _key to [&quot;&quot;, &quot;red&quot;, &quot;blue&quot;, &quot;skull&quot;].random()&gt;&gt;\
+	&lt;&lt;redo&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+
+
+&#39;&#39;Foo:&#39;&#39; &lt;&lt;do tag &quot;foo foobar&quot;&gt;&gt;&lt;&lt;= [&quot;fee&quot;, &quot;fie&quot;, &quot;foe&quot;, &quot;fum&quot;].random()&gt;&gt;&lt;&lt;/do&gt;&gt;
+&#39;&#39;Bar:&#39;&#39; &lt;&lt;do tag &quot;bar foobar&quot;&gt;&gt;&lt;&lt;= [&quot;alfa&quot;, &quot;bravo&quot;, &quot;charlie&quot;, &quot;delta&quot;].random()&gt;&gt;&lt;&lt;/do&gt;&gt;
+\
+&lt;&lt;link &quot;Update foo&quot;&gt;&gt;\
+	&lt;&lt;redo &quot;foo&quot;&gt;&gt;\
+&lt;&lt;/link&gt;&gt;\
+&lt;&lt;link &quot;Update bar&quot;&gt;&gt;\
+	&lt;&lt;redo &quot;bar&quot;&gt;&gt;\
+&lt;&lt;/link&gt;&gt;\
+&lt;&lt;link &quot;Update foo &amp; bar (1)&quot;&gt;&gt;\
+	&lt;&lt;redo &quot;foo bar&quot;&gt;&gt;\
+&lt;&lt;/link&gt;&gt;
+&lt;&lt;link &quot;Update foo &amp; bar (2)&quot;&gt;&gt;\
+	&lt;&lt;redo &quot;foobar&quot;&gt;&gt;\
+&lt;&lt;/link&gt;&gt;
+
+
+&lt;h2&gt;&quot;&quot;&quot;&lt;&lt;include passageName [elementName]&gt;&gt; and &lt;&lt;include linkMarkup [elementName]&gt;&gt;&quot;&quot;&quot;&lt;/h2&gt;\
+\
+输出具有给定名称的段落的内容，可选择将其包装在 HTML 元素中。可以使用段落名称或链接标记来调用。
+Outputs the contents of the passage with the given name, optionally wrapping it within an HTML element. May be called either with the passage name or with a link markup.
+
+段落名称形式
+* passageName：要包含的段落名称。
+* elementName：（可选）包装所包含段落的 HTML 元素。如果使用，该元素将包含标准化为类名的段落名称。更多信息请参见 CSS 段落转换。
+Passage name form
+* passageName: The name of the passage to include.
+* elementName: (optional) The HTML element to wrap the included passage in. If used, the element will include the passage&#39;s name normalized into a class name. See CSS passage conversions for more information.
+
+链接标记形式
+* linkMarkup：要使用的链接标记（仅常规语法，无设置器）。
+* elementName：与段落名称形式相同。
+Link markup form
+* linkMarkup: The link markup to use (regular syntax only, no setters).
+* elementName: Identical to the passage name form.
+
+
+&lt;&lt;include &quot;ResultDisplay&quot;&gt;&gt;
+&lt;&lt;include [[ResultDisplay]]&gt;&gt;
+&lt;&lt;include &quot;ResultDisplay&quot; &quot;div&quot;&gt;&gt;
+&lt;&lt;include [[ResultDisplay]] &quot;div&quot;&gt;&gt;
+
+
+&lt;h2&gt;&quot;&quot;&quot;&lt;&lt;nobr&gt;&gt; … &lt;&lt;/nobr&gt;&gt;&quot;&quot;&quot;&lt;/h2&gt;\
+\
+&lt;&lt;set _feeling to &quot;blue&quot;&gt;&gt;\
+I&#39;d like a &lt;&lt;nobr&gt;&gt;
+&lt;&lt;if _feeling eq &quot;blue&quot;&gt;&gt;
+blueberry
+&lt;&lt;else&gt;&gt;
+cherry
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt; pie.
+
+&lt;h2&gt;&quot;&quot;&quot;&lt;&lt;silent&gt;&gt; … &lt;&lt;/silent&gt;&gt;&quot;&quot;&quot;&lt;/h2&gt;\
+\
+&lt;&lt;set _seconds to 20&gt;&gt;\
+Countdown: &lt;span id=&quot;countdown&quot;&gt;_seconds seconds remaining&lt;/span&gt;!\
+&lt;&lt;silent&gt;&gt;
+	&lt;&lt;repeat 1s&gt;&gt;
+		&lt;&lt;set _seconds to _seconds - 1&gt;&gt;
+		&lt;&lt;if _seconds gt 0&gt;&gt;
+			&lt;&lt;replace &quot;#countdown&quot;&gt;&gt;_seconds seconds remaining&lt;&lt;/replace&gt;&gt;
+		&lt;&lt;else&gt;&gt;
+			&lt;&lt;replace &quot;#countdown&quot;&gt;&gt;Too Late&lt;&lt;/replace&gt;&gt;
+			/* do something useful here */
+			&lt;&lt;stop&gt;&gt;
+		&lt;&lt;/if&gt;&gt;
+	&lt;&lt;/repeat&gt;&gt;
+&lt;&lt;/silent&gt;&gt;
+
+
+&lt;h2&gt;&quot;&quot;&quot;&lt;&lt;type speed [start delay] [class classes] [element tag] [id ID] [keep|none] [skipkey key]&gt;&gt;…&lt;&lt;/type&gt;&gt;&quot;&quot;&quot;&lt;/h2&gt;\
+\
+参数：
+* speed：字符打字的速率，作为有效的 CSS 时间值——例如，1s 和 40ms。20–60ms 范围内的值是一个好的起点。0s 和 0ms 的值会使打字立即完成。
+* start delay：（可选）延迟开始打字的时间量，作为有效的 CSS 时间值——例如，5s 和 500ms。如果省略，默认为 400ms。
+* class classes：（可选）要添加到打字容器的类列表，以空格分隔。
+* element tag：（可选）用作打字容器的元素——例如，div 和 span。如果省略，默认为 div。
+* id ID：（可选）要分配给打字容器的唯一 ID。
+* keep：（可选）关键字，用于表示打字完成后应保留光标。
+* none：（可选）关键字，用于表示根本不应使用光标。
+* skipkey：（可选）用于使打字立即完成的键。如果省略，默认为 Config.macros.typeSkipKey 的值。
+
+
+打字文本没有默认样式。如果你想更改字体或颜色，那么你需要更改 macro-type 类的样式。例如：
+&lt;html&gt;&lt;pre&gt;
+css.macro-type {
+	color: limegreen;
+	font-family: monospace, monospace;
+}
+&lt;/pre&gt;&lt;/html&gt;
+还有一个 macro-type-done 类会添加到已完成打字的文本中，可以用来为其设置与正在打字的文本不同的样式。
+默认光标是块元素字符 Right Half Block (U+2590)，它没有默认的字体或颜色样式。如果你想更改字体、颜色或字符，那么你需要更改 macro-type-cursor 类的 :after 伪元素的样式。例如：
+&lt;html&gt;&lt;pre&gt;
+css.macro-type-cursor:after {
+	color: limegreen;
+	content: &quot;\269C\FE0F&quot;; /* Fleur-de-lis emoji */
+	font-family: monospace, monospace;
+}
+&lt;/pre&gt;&lt;/html&gt;
+
+&lt;&lt;type 40ms&gt;&gt;
+	Type characters from this content every 40 milliseconds.  Including [[ResultDisplay]] and &#39;&#39;other markup&#39;&#39;!
+&lt;&lt;/type&gt;&gt;
+
+&lt;&lt;type 40ms start 2s&gt;&gt;
+	Type characters from this content every 40 milliseconds, starting after a 2 second delay.
+&lt;&lt;/type&gt;&gt;
+
+&lt;&lt;type 40ms class &quot;foo bar&quot;&gt;&gt;
+	Type characters from this content every 40 milliseconds, adding classes to the typing container.
+&lt;&lt;/type&gt;&gt;
+
+&lt;&lt;type 40ms element &quot;span&quot;&gt;&gt;
+	Type characters from this content every 40 milliseconds, using a &quot;&quot;&quot;&lt;span&gt;&quot;&quot;&quot; as the typing container.
+&lt;&lt;/type&gt;&gt;
+
+&lt;&lt;type 40ms id &quot;type01&quot;&gt;&gt;
+	Type characters from this content every 40 milliseconds, assigning an ID to the typing container.
+&lt;&lt;/type&gt;&gt;
+
+&lt;&lt;type 40ms keep&gt;&gt;
+	Type characters from this content every 40 milliseconds, keeping the cursor after typing is complete.
+&lt;&lt;/type&gt;&gt;
+
+&lt;&lt;type 40ms skipkey &quot;Control&quot;&gt;&gt;
+	Type characters from this content every 40 milliseconds, using the Control (CTRL) key as the skip key.
+&lt;&lt;/type&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="MacroArguments" tags="" position="600,100" size="100,100">&lt;details&gt;\
+&lt;summary&gt;参数类型宏：将变量名作为参数传递&lt;/summary&gt;\
+将变量名作为参数传递是有问题的，因为在 SugarCube 宏中变量替换是自动发生的。这意味着当您将变量作为参数传递时，它的值被传递给宏而不是它的名称。
+通常，这正是您想要发生的。然而，偶尔宏会需要变量的名称而不是它的值——例如，数据输入宏如 &quot;&quot;&quot;&lt;&lt;textbox&gt;&gt;&quot;&quot;&quot;——以便它们可以修改变量。要解决这些情况，您需要引用变量的名称——即，不是像平常那样传递 &quot;&quot;&quot;$pie&quot;&quot;&quot;，而是传递 &lt;nowiki&gt;&quot;$pie&quot;&lt;/nowiki&gt;。这些罕见的情况在宏的文档中有说明，并在示例中展示。
+&lt;/details&gt;
+
+&lt;details&gt;\
+&lt;summary&gt;Argument type macros: passing a variable&#39;s name as an argument&lt;/summary&gt;\
+Passing the name of a variable as an argument is problematic because variable substitution occurs automatically in SugarCube macros. Meaning that when you pass a variable as an argument, its value is passed to the macro rather than its name.
+Normally, this is exactly what you want to happen. Occasionally, however, macros will need the name of a variable rather than its value—e.g., data input macros like &quot;&quot;&quot;&lt;&lt;textbox&gt;&gt;&quot;&quot;&quot;—so that they may modify the variable. To resolve these instances, you will need to quote the name of the variable—i.e., instead of passing &quot;&quot;&quot;$pie&quot;&quot;&quot; as normal, you&#39;d pass &lt;nowiki&gt;&quot;$pie&quot;&lt;/nowiki&gt;. These, rare, instances are noted in the macros&#39; documentation and shown in their examples.
+&lt;/details&gt;
+
+&lt;hr&gt;
+
+&lt;h2&gt;参数类型宏：将表达式作为参数传递 Argument type macros: passing an expression as an argument&lt;/h2&gt;\
+
+&lt;&lt;set _name = &quot;Target&quot;&gt;&gt;\
+&lt;&lt;set _target = _name + &quot;Display&quot;&gt;&gt;\
+&lt;&lt;link _target&gt;&gt;&lt;&lt;/link&gt;&gt;
+&lt;&lt;link `_name + &quot;Dispay&quot;`&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="ScriptingMacros" tags="" position="725,100" size="100,100">&lt;h2&gt;&quot;&quot;&quot;&lt;&lt;run expression&gt;&gt;&quot;&quot;&quot;&lt;/h2&gt;\
+\
+功能上与&quot;&quot;&quot;&lt;&lt;set&gt;&gt;&quot;&quot;&quot;相同。适用于表达式是任意代码而不是要设置的变量的情况——即，&quot;&quot;&quot;&lt;&lt;run&gt;&gt;&quot;&quot;&quot;用于运行代码，&quot;&quot;&quot;&lt;&lt;set&gt;&gt;&quot;&quot;&quot;用于设置变量，在记忆上更好理解。
+Functionally identical to &quot;&quot;&quot;&lt;&lt;set&gt;&gt;&quot;&quot;&quot;. Intended to be mnemonically better for uses where the expression is arbitrary code, rather than variables to set—i.e., &quot;&quot;&quot;&lt;&lt;run&gt;&gt;&quot;&quot;&quot; to run code, &quot;&quot;&quot;&lt;&lt;set&gt;&gt;&quot;&quot;&quot; to set variables.
+
+&lt;h2&gt;&quot;&quot;&quot;&lt;&lt;script [language]&gt;&gt; … &lt;&lt;/script&gt;&gt;&quot;&quot;&quot;&lt;/h2&gt;\
+\
+静默执行其内容作为JavaScript或TwineScript代码（默认：JavaScript）。
+Silently executes its contents as either JavaScript or TwineScript code (default: JavaScript).
+
+注意： 预定义变量output（它是对本地内容缓冲区的引用）可在宏的代码内容中使用。一旦代码完全执行完毕，缓冲区的内容（如果有的话）将被输出。
+Note: The predefined variable output, which is a reference to a local content buffer, is available for use within the macro&#39;s code contents. Once the code has been fully executed, the contents of the buffer, if any, will be output.
+
+&lt;&lt;script&gt;&gt;
+    $(output).append(&quot;&lt;h2&gt;Time Display&lt;/h2&gt;&quot;);
+    $(output).append(&quot;&lt;p&gt;Time: &quot; + new Date().toLocaleString() + &quot;&lt;/p&gt;&quot;);
+&lt;&lt;/script&gt;&gt;
+
+&lt;&lt;set $playerHealth to random(1,100)&gt;&gt;\
+&lt;&lt;script&gt;&gt;
+    const health = State.variables.playerHealth;
+    $(output).wiki(&quot;你当前有 &quot; + health + &quot; 点健康。&quot;);
+    if (health &gt; 80) {
+        $(output).wiki(&quot;你感觉 &#39;&#39;非常健康&#39;&#39;！&quot;);
+    } else if (health &gt; 50) {
+        $(output).wiki(&quot;你感觉还 //不错//。&quot;);
+    } else {
+        $(output).wiki(&quot;你感觉很 &#39;&#39;虚弱&#39;&#39;...&quot;);
+    }
+    
+    // 添加血条显示
+    $(output).append(`&lt;div style=&quot;width:100px; height:20px; border:1px solid black;&quot;&gt;
+                        &lt;div style=&quot;width:${health}%; height:100%; background:red;&quot;&gt;&lt;/div&gt;
+                      &lt;/div&gt;`);
+&lt;&lt;/script&gt;&gt;
+
+&lt;&lt;set $inventory to [&quot;剑&quot;, &quot;盾牌&quot;, &quot;药水&quot;, &quot;钥匙&quot;]&gt;&gt;\
+&lt;&lt;script&gt;&gt;
+    $(output).wiki(&quot;&lt;nowiki&gt;==背包物品==&lt;/nowiki&gt;&quot;);
+    
+    const items = State.variables.inventory;
+    for (let i = 0; i &lt; items.length; i++) {
+        $(output).wiki(`* ${items[i]}`);
+    }
+&lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="VariablesMacros" tags="" position="850,100" size="100,100">&lt;&lt;set _what to [
+	&quot;a crab rangoon&quot;,
+	&quot;a gaggle of geese&quot;, 
+	&quot;an aardvark&quot;,
+	&quot;the world&#39;s smallest violin&quot;,
+    &quot;... this is the end.&quot;
+]&gt;&gt;\
+
+\&lt;h2&gt;&quot;&quot;&quot;&lt;&lt;capture variableList&gt;&gt; … &lt;&lt;/capture&gt;&gt;&quot;&quot;&quot;&lt;/h2&gt;\
+\
+With capture:
+&lt;&lt;for _i = 0; _i &lt; _what.length; _i++&gt;&gt;\
+	&lt;&lt;capture _i&gt;&gt;\
+		I spy with my little &lt;&lt;linkappend &quot;eye&quot; t8n&gt;&gt;, _what[_i] (&quot;&quot;&quot;_i&quot;&quot;&quot;=_i)&lt;&lt;/linkappend&gt;&gt;.
+	&lt;&lt;/capture&gt;&gt;\
+&lt;&lt;/for&gt;&gt;
+
+Without capture:
+&lt;&lt;for _i to 0; _i lt _what.length - 1; _i++&gt;&gt;
+	I spy with my little &lt;&lt;linkappend &quot;eye&quot; t8n&gt;&gt;, _what[_i] (&quot;&quot;&quot;_i&quot;&quot;&quot;=_i)&lt;&lt;/linkappend&gt;&gt;.
+&lt;&lt;/for&gt;&gt;
+
+
+&lt;div class=&quot;code&quot;&gt;\
+Capturing several variables at once:
+&quot;&quot;&quot;&lt;&lt;capture $aStoryVar, $anotherStoryVar, _aTempVar&gt;&gt; … &lt;&lt;/capture&gt;&gt;&quot;&quot;&quot;
+&lt;/div&gt;
+
+&lt;hr&gt;
+
+\&lt;h2&gt;&quot;&quot;&quot;&lt;&lt;set expression&gt;&gt;&quot;&quot;&quot;&lt;/h2&gt;\
+\
+Using the TwineScript &quot;to&quot; operator.
+The standard JavaScript operators also work.
+&lt;div class=&quot;code&quot;&gt;\
+&quot;&quot;&quot;&lt;&lt;set $cheese to &quot;a nice, sharp cheddar&quot;&gt;&gt;  → Assigns &quot;a nice, sharp cheddar&quot; to story variable $cheese&quot;&quot;&quot;
+&quot;&quot;&quot;&lt;&lt;set $chestEmpty to true&gt;&gt;                 → Assigns boolean true to story variable $chestEmpty&quot;&quot;&quot;
+&quot;&quot;&quot;&lt;&lt;set $sum to $a + $b&gt;&gt;                     → Assigns the summation of story variables $a and $b to $sum&quot;&quot;&quot;
+&quot;&quot;&quot;&lt;&lt;set $gold to $gold + 5&gt;&gt;                  → Adds 5 to the value of story variable $gold&quot;&quot;&quot;
+&quot;&quot;&quot;&lt;&lt;set _counter to _counter + 1&gt;&gt;            → Adds 1 to the value of temporary variable _counter&quot;&quot;&quot;
+&lt;/div&gt;
+
+\&lt;h2&gt;&quot;&quot;&quot;&lt;&lt;unset variableList&gt;&gt;&quot;&quot;&quot;&lt;/h2&gt;\
+\
+Unsetting story and temporary variables.
+Unsetting object properties.
+&lt;div class=&quot;code&quot;&gt;\
+&quot;&quot;&quot;&lt;&lt;unset $rumors&gt;&gt;&quot;&quot;&quot;&quot;
+&quot;&quot;&quot;&lt;&lt;unset _npc&gt;&gt;&quot;&quot;&quot;&quot;
+&quot;&quot;&quot;&lt;&lt;unset $rumors, _npc, _choices, $job&gt;&gt;&quot;&quot;&quot;&quot;
+
+&quot;&quot;&quot;&lt;&lt;unset _choices.b&gt;&gt;&quot;&quot;&quot;&quot;
+&quot;&quot;&quot;&lt;&lt;unset $towns[&#39;port ulster&#39;].rumors&gt;&gt;&quot;&quot;&quot;&quot;
+&quot;&quot;&quot;&lt;&lt;unset _choices.b, $towns[&#39;port ulster&#39;].rumors, $pc.notes, _park.rides[&#39;wheel of death&#39;]&gt;&gt;&quot;&quot;&quot;&quot;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="BlockquotePage" tags="" position="975,100" size="100,100">&gt;Line 1
 &gt;Line 2
 &gt;&gt;Nested 1
 &gt;&gt;Nested 2
@@ -199,7 +559,7 @@ Template.add('greetingTimeEN', function () {
 Line 2
 &lt;blockquote&gt;Nested 1
 Nested 2
-&lt;/blockquote&gt;&lt;/blockquote&gt;</tw-passagedata><tw-passagedata pid="4" name="CodePage" tags="" position="475,100" size="100,100">{{{Code}}}
+&lt;/blockquote&gt;&lt;/blockquote&gt;</tw-passagedata><tw-passagedata pid="9" name="CodePage" tags="" position="1100,100" size="100,100">{{{Code}}}
 
 &lt;code&gt;Code&lt;/code&gt;
 
@@ -211,11 +571,11 @@ More code
 
 &lt;pre&gt;&lt;code&gt;Code
 More code
-&lt;/code&gt;&lt;/pre&gt;</tw-passagedata><tw-passagedata pid="5" name="CommentPage" tags="" position="600,100" size="100,100">/* This is a comment. */
+&lt;/code&gt;&lt;/pre&gt;</tw-passagedata><tw-passagedata pid="10" name="CommentPage" tags="" position="1225,100" size="100,100">/* This is a comment. */
 
 /% This is a comment. %/
 
-&lt;!-- This is a comment. --&gt;</tw-passagedata><tw-passagedata pid="6" name="CustomStyle" tags="" position="725,100" size="100,100">@@#this-is-id;.result;This is text in span.@@
+&lt;!-- This is a comment. --&gt;</tw-passagedata><tw-passagedata pid="11" name="CustomStyle" tags="" position="100,225" size="100,100">@@#this-is-id;.result;This is text in span.@@
 
 @@color:red;Text in span.@@
 
@@ -231,7 +591,7 @@ Text in div.
 
 As of v2.31.0, the ID and class names components may be conjoined without need of extra semi-colons—e.g., #alfa;.bravo;.charlie; may also be written as #alfa.bravo.charlie;. 
 
-从 v2.31.0 版本开始，ID 和类名组件可以直接连接，无需额外分号 —— 例如 #alfa;.bravo;.charlie; 也可写作 #alfa.bravo.charlie;。</tw-passagedata><tw-passagedata pid="7" name="HTML-SVG-Attribute" tags="" position="850,100" size="100,100">&lt;&lt;set _target = &quot;ResultDisplay&quot;&gt;&gt;
+从 v2.31.0 版本开始，ID 和类名组件可以直接连接，无需额外分号 —— 例如 #alfa;.bravo;.charlie; 也可写作 #alfa.bravo.charlie;。</tw-passagedata><tw-passagedata pid="12" name="HTML-SVG-Attribute" tags="" position="225,225" size="100,100">&lt;&lt;set _target = &quot;ResultDisplay&quot;&gt;&gt;
 
 
 &lt;audio data-passage=&quot;_target&quot; controls&gt;
@@ -271,9 +631,9 @@ This div uses @class=&quot;_class&quot;
 
 &lt;div @class=&quot;_class&quot;&gt;
 此处 div 使用了 @class=&quot;_class&quot;（语法糖）
-This div uses @class=&quot;_class&quot;
+This div uses @class=&quot;_class&quot; (syntactic sugar)
 
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="HeadingPage" tags="" position="975,100" size="100,100">!Level 1 Heading
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="HeadingPage" tags="" position="350,225" size="100,100">!Level 1 Heading
 
 !!Level 2 Heading
 
@@ -283,9 +643,9 @@ This div uses @class=&quot;_class&quot;
 
 !!!!!Level 5 Heading
 
-!!!!!!!Level 6 Heading</tw-passagedata><tw-passagedata pid="9" name="HorizontalRule" tags="" position="1100,100" size="100,100">----
+!!!!!!!Level 6 Heading</tw-passagedata><tw-passagedata pid="14" name="HorizontalRule" tags="" position="475,225" size="100,100">----
 
-&lt;hr&gt;</tw-passagedata><tw-passagedata pid="10" name="ImagePage" tags="" position="1225,100" size="100,100">&lt;code&gt;
+&lt;hr&gt;</tw-passagedata><tw-passagedata pid="15" name="ImagePage" tags="" position="600,225" size="100,100">&lt;code&gt;
 | Syntax | Example |
 | &quot;&quot;&quot;[img[Image]]&quot;&quot;&quot; | &quot;&quot;&quot;[img[home.png]]&quot;&quot;&quot;&lt;br&gt;&quot;&quot;&quot;[img[$src]]&quot;&quot;&quot; |
 | &quot;&quot;&quot;[img[Image][Link]]&quot;&quot;&quot; | &quot;&quot;&quot;[img[home.png][Home]]&quot;&quot;&quot;&lt;br&gt;&quot;&quot;&quot;[img[$src][$go]]&quot;&quot;&quot; |
@@ -308,7 +668,7 @@ This div uses @class=&quot;_class&quot;
 &lt;/div&gt;
 &lt;div class=&quot;result&quot;&gt;[img[Goto ResultDisplay Page|img/head/01.png][ResultDisplay][$result = &quot;From Image Page&quot;]]
 [img[$show|$src][$target][$result = &quot;From Image Page&quot;]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="LineContinuation" tags="" position="100,225" size="100,100">The rain in Spain falls \
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="16" name="LineContinuation" tags="" position="725,225" size="100,100">The rain in Spain falls \
 mainly on the plain.
 
 The rain in Spain falls \    
@@ -318,7 +678,7 @@ The rain in Spain falls
 \ mainly on the plain.
 
 The rain in Spain falls
-    \ mainly on the plain.</tw-passagedata><tw-passagedata pid="12" name="LinkPage" tags="" position="225,225" size="100,100">&lt;code&gt;
+    \ mainly on the plain.</tw-passagedata><tw-passagedata pid="17" name="LinkPage" tags="" position="850,225" size="100,100">&lt;code&gt;
 | Syntax                  | Example                                                      |
 | &quot;&quot;&quot;[[Link]]&quot;&quot;&quot;              | &quot;&quot;&quot;[[Grocery]]&quot;&quot;&quot;&lt;br&gt;&quot;&quot;&quot;[[$go]]&quot;&quot;&quot;                              |
 | &quot;&quot;&quot;[[Text|Link]]&quot;&quot;&quot;         | &quot;&quot;&quot;[[Go buy milk|Grocery]]&quot;&quot;&quot;&lt;br&gt;&quot;&quot;&quot;[[$show|$go]]&quot;&quot;&quot;            |
@@ -333,7 +693,7 @@ The rain in Spain falls
 &lt;/div&gt;
 &lt;div class=&quot;result&quot;&gt;[[Goto ResultDisplay Page|ResultDisplay][$result = &quot;From Link Page&quot;]]
 [[$show|$target][$result = &quot;From Link Page&quot;]]
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="ListPage" tags="" position="350,225" size="100,100">* A list item
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="18" name="ListPage" tags="" position="975,225" size="100,100">* A list item
 * Another list item
 
 &lt;ul&gt;
@@ -348,7 +708,7 @@ The rain in Spain falls
 &lt;ol&gt;
 &lt;li&gt;A list item&lt;/li&gt;
 &lt;li&gt;Another list item&lt;/li&gt;
-&lt;/ol&gt;</tw-passagedata><tw-passagedata pid="14" name="NakedVariable" tags="" position="475,225" size="100,100">&lt;code&gt;
+&lt;/ol&gt;</tw-passagedata><tw-passagedata pid="19" name="NakedVariable" tags="" position="1100,225" size="100,100">&lt;code&gt;
 | Type | Syntax | Example |
 | Simple variable | &quot;&quot;&quot;$variable&quot;&quot;&quot; | &quot;&quot;&quot;$name&quot;&quot;&quot; |
 | Property access, dot notation | &quot;&quot;&quot;$variable.property&quot;&quot;&quot; | &quot;&quot;&quot;$thing.name&quot;&quot;&quot; |
@@ -380,7 +740,7 @@ The variable $name is set to: Mr. Freeman
 &lt;/div&gt;
 &lt;div class=&quot;result&quot;&gt;The variable {{{$name}}} is set to: $name
 The variable &lt;code&gt;$name&lt;/code&gt; is set to: Mr. Freeman
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="StylePage" tags="" position="600,225" size="100,100">//Emphasis//  &lt;em&gt;Emphasis&lt;/em&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="StylePage" tags="" position="1225,225" size="100,100">//Emphasis//  &lt;em&gt;Emphasis&lt;/em&gt;
 
 &#39;&#39;Strong&#39;&#39;  &lt;strong&gt;Strong&lt;/strong&gt;
 
@@ -390,7 +750,7 @@ __Underline__  &lt;u&gt;Underline&lt;/u&gt;
 
 Super^^script^^  Super&lt;sup&gt;script&lt;/sup&gt;
 
-Sub~~script~~  Sub&lt;sub&gt;script&lt;/sub&gt;</tw-passagedata><tw-passagedata pid="16" name="TemplatePage" tags="" position="725,225" size="100,100">&lt;&lt;set $name = &quot;himeditator&quot;&gt;&gt;
+Sub~~script~~  Sub&lt;sub&gt;script&lt;/sub&gt;</tw-passagedata><tw-passagedata pid="21" name="TemplatePage" tags="" position="100,350" size="100,100">&lt;&lt;set $name = &quot;himeditator&quot;&gt;&gt;
 
 After entering the room, you hear ?greetingCN.
 进入房间后，你听到 ?greetingCN。
@@ -400,7 +760,7 @@ After entering the room, you hear ?greetingCN.
 &lt;hr&gt;
 
 这部分的 JavaScript 代码见 {{{scripts}}} 文件夹下 {{{template.js}}} 文件。
-The JavaScript code for this part can be found in the {{{template.js}}} file in the {{{scripts}}} folder.</tw-passagedata><tw-passagedata pid="17" name="VerbatimHTML" tags="" position="850,225" size="100,100">A set of opening and closing &quot;&quot;&quot;&lt;html&gt;&quot;&quot;&quot; tags—i.e., &quot;&quot;&quot;&lt;html&gt;&lt;/html&gt;&quot;&quot;&quot;—defines the verbatim HTML markup. The verbatim HTML markup disables processing of all markup contained within—both SugarCube and HTML—passing its contents directly into the output as HTML markup for the browser. Thus, you should only use plain HTML markup within the verbatim markup—meaning using none of SugarCube&#39;s special HTML attributes or directives.
+The JavaScript code for this part can be found in the {{{template.js}}} file in the {{{scripts}}} folder.</tw-passagedata><tw-passagedata pid="22" name="VerbatimHTML" tags="" position="225,350" size="100,100">A set of opening and closing &quot;&quot;&quot;&lt;html&gt;&quot;&quot;&quot; tags—i.e., &quot;&quot;&quot;&lt;html&gt;&lt;/html&gt;&quot;&quot;&quot;—defines the verbatim HTML markup. The verbatim HTML markup disables processing of all markup contained within—both SugarCube and HTML—passing its contents directly into the output as HTML markup for the browser. Thus, you should only use plain HTML markup within the verbatim markup—meaning using none of SugarCube&#39;s special HTML attributes or directives.
 
 一对开始和结束的 &quot;&quot;&quot;&lt;html&gt;&quot;&quot;&quot; 标签（即 &quot;&quot;&quot;&lt;html&gt;&lt;/html&gt;&quot;&quot;&quot;）定义了纯 HTML 标记。纯 HTML 标记会禁用对其中包含的所有标记（包括 SugarCube 和 HTML 本身的特殊功能）的处理，直接将其内容作为 HTML 标记传递给浏览器进行渲染。因此，你应该仅在纯 HTML 标记内使用普通的 HTML 标记，即不使用 SugarCube 的任何特殊 HTML 属性或指令。
 
@@ -414,9 +774,9 @@ Inside the html tag, you can see that line breaks are no longer applied by defau
 3
 4
 5
-&lt;/html&gt;</tw-passagedata><tw-passagedata pid="18" name="VerbatimText" tags="" position="975,225" size="100,100">&quot;&quot;&quot;No //format//&quot;&quot;&quot;
+&lt;/html&gt;</tw-passagedata><tw-passagedata pid="23" name="VerbatimText" tags="" position="350,350" size="100,100">&quot;&quot;&quot;No //format//&quot;&quot;&quot;
 
-&lt;nowiki&gt;No //format//&lt;/nowiki&gt;</tw-passagedata><tw-passagedata pid="19" name="GuideIndex" tags="" position="1100,225" size="100,100"></tw-passagedata><tw-passagedata pid="20" name="Home" tags="" position="1225,225" size="100,100">&lt;details open&gt;&lt;summary&gt;English&lt;/summary&gt;
+&lt;nowiki&gt;No //format//&lt;/nowiki&gt;</tw-passagedata><tw-passagedata pid="24" name="GuideIndex" tags="" position="475,350" size="100,100"></tw-passagedata><tw-passagedata pid="25" name="Home" tags="" position="600,350" size="100,100">&lt;details open&gt;&lt;summary&gt;English&lt;/summary&gt;
 Welcome to this project, which is based on the official SugarCube documentation: &lt;a href=&quot;https://www.motoslave.net/sugarcube/2/docs/&quot; target=&quot;_blank&quot;&gt;SugarCube v2 Documentation&lt;/a&gt;. This project will only cover the content that I personally need to experiment with and will not include everything.
 
 Note:
@@ -457,8 +817,8 @@ Note:
         [[API-Index]]&lt;br&gt;
         [[GuideIndex]]&lt;br&gt;
     &lt;/div&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="ResultDisplay" tags="" position="100,350" size="100,100">&lt;div class=&quot;code&quot;&gt;The value of $$result is:&lt;/div&gt;
-&lt;div class=&quot;result&quot;&gt;$result&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="Template" tags="" position="225,350" size="100,100">&lt;div class=&quot;code&quot;&gt;&lt;/div&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="ResultDisplay" tags="" position="725,350" size="100,100">&lt;div class=&quot;code&quot;&gt;The value of $$result is:&lt;/div&gt;
+&lt;div class=&quot;result&quot;&gt;$result&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="Template" tags="" position="850,350" size="100,100">&lt;div class=&quot;code&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;result&quot;&gt;&lt;/div&gt;</tw-passagedata></tw-storydata>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */

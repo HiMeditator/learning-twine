@@ -19,3 +19,18 @@
     [[TemplatePage]]
     [[CommentPage]]
 </details>
+
+<details open>\
+    <summary>TwineScript</summary>\
+    这部分和 JavaScript 语法高度相似，因此我没有在这部分添加任何页面。
+    This part is highly similar to JavaScript syntax, so I did not add any pages for this section.
+</details>
+
+<details open>\
+    <summary>Macros</summary>\
+    [[MacroArguments]]
+    [[VariablesMacros]]
+    [[ScriptingMacros]]
+    [[DisplayMacros]]
+    [[ControlMacros]]
+</details>

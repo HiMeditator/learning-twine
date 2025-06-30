@@ -1,0 +1,57 @@
+:: ControlMacros
+
+<h2>"""<<if conditional>> … [<<elseif conditional>> …] [<<else>> …] <</if>>"""</h2>
+
+SugarCube 不会自动去除 """<<if>>""" 宏内容中的空白字符，以便作者可以更灵活地控制输出中的空格。这也意味着在编写时需要特别注意不要生成多余的空白。
+
+<<set _affection to random(1,100)>>\
+Your affection points are _affection.
+<<if _affection gte 75>>\
+	I love you!
+<<elseif _affection gte 50>>\
+	I like you.
+<<elseif _affection gte 25>>\
+	I'm okay with you.
+<<else>>\
+	Get out of my face.
+<</if>>
+
+
+<h2>"""<<for [conditional]>> … <</for>>"""</h2>\
+<h2>"""<<for [init] ; [conditional] ; [post]>> … <</for>>"""</h2>\
+<h2>"""<<for [[keyVariable ,] valueVariable] range collection>> … <</for>>"""</h2>\
+\
+<<set $dwarves to ["Doc", "Dopey", "Bashful", "Grumpy", "Sneezy", "Sleepy", "Happy"]>>
+<<for _i to 0; _i lt $dwarves.length; _i++>>\
+    <<print _i + 1>>. $dwarves[_i]
+<</for>>
+
+<<for _i, _name range $dwarves>>\
+    <<if _name === "Sleepy">>\
+        <<continue>>\
+    <</if>>\
+    <<print _i + 1>>. _name
+<</for>>
+
+<<for _value range 7>>\
+    <<print _value>>.
+    <<if _value === 4>>\
+        <<break>>\
+    <</if>>\
+<</for>>
+
+
+<h2>"""<<switch expression>> [<<case valueList>> …] [<<default>> …] <</switch>>"""</h2>\
+\
+<<set _vis to random(1, 5)>>
+You have visited this place for _vis times.
+<<switch _vis>>\
+<<case 1>>\
+	You gaze in wonder at the magnificent waterfall for the first time, awestruck by its natural beauty.
+<<case 2 3>>\
+	You once again gaze upon the magnificent waterfall.
+<<case 4 5>>\
+	Yet again, you find yourself looking upon the waterfall.
+<<default>>\
+	Oh, look.  It's that waterfall again.  Meh.
+<</switch>>

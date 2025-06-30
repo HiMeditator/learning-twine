@@ -1,0 +1,57 @@
+:: VariablesMacros
+
+<<set _what to [
+	"a crab rangoon",
+	"a gaggle of geese", 
+	"an aardvark",
+	"the world's smallest violin",
+    "... this is the end."
+]>>\
+
+\<h2>"""<<capture variableList>> … <</capture>>"""</h2>\
+\
+With capture:
+<<for _i = 0; _i < _what.length; _i++>>\
+	<<capture _i>>\
+		I spy with my little <<linkappend "eye" t8n>>, _what[_i] ("""_i"""=_i)<</linkappend>>.
+	<</capture>>\
+<</for>>
+
+Without capture:
+<<for _i to 0; _i lt _what.length - 1; _i++>>
+	I spy with my little <<linkappend "eye" t8n>>, _what[_i] ("""_i"""=_i)<</linkappend>>.
+<</for>>
+
+
+<div class="code">\
+Capturing several variables at once:
+"""<<capture $aStoryVar, $anotherStoryVar, _aTempVar>> … <</capture>>"""
+</div>
+
+<hr>
+
+\<h2>"""<<set expression>>"""</h2>\
+\
+Using the TwineScript "to" operator.
+The standard JavaScript operators also work.
+<div class="code">\
+"""<<set $cheese to "a nice, sharp cheddar">>  → Assigns "a nice, sharp cheddar" to story variable $cheese"""
+"""<<set $chestEmpty to true>>                 → Assigns boolean true to story variable $chestEmpty"""
+"""<<set $sum to $a + $b>>                     → Assigns the summation of story variables $a and $b to $sum"""
+"""<<set $gold to $gold + 5>>                  → Adds 5 to the value of story variable $gold"""
+"""<<set _counter to _counter + 1>>            → Adds 1 to the value of temporary variable _counter"""
+</div>
+
+\<h2>"""<<unset variableList>>"""</h2>\
+\
+Unsetting story and temporary variables.
+Unsetting object properties.
+<div class="code">\
+"""<<unset $rumors>>""""
+"""<<unset _npc>>""""
+"""<<unset $rumors, _npc, _choices, $job>>""""
+
+"""<<unset _choices.b>>""""
+"""<<unset $towns['port ulster'].rumors>>""""
+"""<<unset _choices.b, $towns['port ulster'].rumors, $pc.notes, _park.rides['wheel of death']>>""""
+</div>

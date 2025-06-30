@@ -11,6 +11,10 @@
     </p>
 </div>
 
+## 🌐 Online Access
+
+https://himeditator.github.io/learning-twine/
+
 ## 📝 Background Knowledge
 
 This project is based on the official SugarCube documentation: <a href="https://www.motoslave.net/sugarcube/2/docs/" target="_blank">SugarCube v2 Documentation</a>. This project will only cover the content that I personally need to experiment with and will not include everything.
@@ -23,10 +27,6 @@ To better understand this project, it is necessary to have a certain level of un
 - **HTML**: Hypertext Markup Language, the foundational language used for building the structure of web pages.
 - **CSS**: Cascading Style Sheets, used to define the layout and appearance of web pages.
 - **JavaScript**: A programming language used to implement interactive features on web pages.
-
-## 🌐 Online Access
-
-https://himeditator.github.io/learning-twine/
 
 ## 🚀 Running the Project
 
