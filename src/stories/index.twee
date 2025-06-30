@@ -46,6 +46,11 @@ Note:
 7. 以上样式只会在 CoreIndex 下的前三节（NakedVariable、Link、Image）全部出现，后续将直接写代码，页面展示的将是代码执行的结果，不再有代码的原本内容
 </details>
 <hr>
-[[CoreIndex]]
-[[API-Index]]
-[[GuideIndex]]
+<<nobr>>
+    <div style="font-size:20px;font-weight:bold;">
+        Table of Contents<br>
+        [[CoreIndex]]<br>
+        [[API-Index]]<br>
+        [[GuideIndex]]<br>
+    </div>
+<</nobr>>

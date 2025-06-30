@@ -1,0 +1,16 @@
+#ui-bar {
+    /* original 17.5em */
+    width: 22.5em;
+}
+
+#ui-bar.stowed {
+    /* original -15.5em */
+    left: -20.5em;
+}
+
+@media screen and (max-width: 1136px) {
+    #story {
+        /* original 19em */
+        margin-left: 24em;
+    }
+}

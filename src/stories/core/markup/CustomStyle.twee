@@ -1,0 +1,19 @@
+:: CustomStyle
+
+@@#this-is-id;.result;This is text in span.@@
+
+@@color:red;Text in span.@@
+
+@@#this-is-id2.result;
+This is text in div.
+Without extra semi-colons.
+@@
+
+@@color:red;
+Text in div.
+@@
+
+
+As of v2.31.0, the ID and class names components may be conjoined without need of extra semi-colons—e.g., #alfa;.bravo;.charlie; may also be written as #alfa.bravo.charlie;. 
+
+从 v2.31.0 版本开始，ID 和类名组件可以直接连接，无需额外分号 —— 例如 #alfa;.bravo;.charlie; 也可写作 #alfa.bravo.charlie;。

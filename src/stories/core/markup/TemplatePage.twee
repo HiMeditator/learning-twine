@@ -1,0 +1,13 @@
+:: TemplatePage
+
+<<set $name = "himeditator">>
+
+After entering the room, you hear ?greetingCN.
+进入房间后，你听到 ?greetingCN。
+
+?greetingTimeEN.
+
+<hr>
+
+这部分的 JavaScript 代码见 {{{scripts}}} 文件夹下 {{{template.js}}} 文件。
+The JavaScript code for this part can be found in the {{{template.js}}} file in the {{{scripts}}} folder.

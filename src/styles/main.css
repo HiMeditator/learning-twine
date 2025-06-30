@@ -3,9 +3,11 @@ summary {
     font-weight: bold;
     cursor: pointer;
 }
+
 summary::before {
     content: "👉";
 }
+
 details[open] > summary::before {
     content: "👀";
 }
