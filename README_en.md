@@ -24,9 +24,9 @@ To better understand this project, it is necessary to have a certain level of un
 - **CSS**: Cascading Style Sheets, used to define the layout and appearance of web pages.
 - **JavaScript**: A programming language used to implement interactive features on web pages.
 
-## 🌐 Sample Webpage
+## 🌐 Online Access
 
-Not available yet.
+https://himeditator.github.io/learning-twine/
 
 ## 🚀 Running the Project
 

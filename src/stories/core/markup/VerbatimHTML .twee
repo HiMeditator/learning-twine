@@ -1,0 +1,17 @@
+:: VerbatimHTML 
+
+A set of opening and closing """<html>""" tags—i.e., """<html></html>"""—defines the verbatim HTML markup. The verbatim HTML markup disables processing of all markup contained within—both SugarCube and HTML—passing its contents directly into the output as HTML markup for the browser. Thus, you should only use plain HTML markup within the verbatim markup—meaning using none of SugarCube's special HTML attributes or directives.
+
+一对开始和结束的 """<html>""" 标签（即 """<html></html>"""）定义了纯 HTML 标记。纯 HTML 标记会禁用对其中包含的所有标记（包括 SugarCube 和 HTML 本身的特殊功能）的处理，直接将其内容作为 HTML 标记传递给浏览器进行渲染。因此，你应该仅在纯 HTML 标记内使用普通的 HTML 标记，即不使用 SugarCube 的任何特殊 HTML 属性或指令。
+
+<hr>
+
+<html>
+在 html 标签中，可以看到不再默认换行。<br>
+Inside the html tag, you can see that line breaks are no longer applied by default.<br>
+1
+2
+3
+4
+5
+</html>

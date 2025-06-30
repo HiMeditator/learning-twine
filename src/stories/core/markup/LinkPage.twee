@@ -1,4 +1,4 @@
-:: Link
+:: LinkPage
 <code>
 | Syntax                  | Example                                                      |
 | """[[Link]]"""              | """[[Grocery]]"""<br>"""[[$go]]"""                              |

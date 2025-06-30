@@ -1,0 +1,13 @@
+:: LineContinuation
+
+The rain in Spain falls \
+mainly on the plain.
+
+The rain in Spain falls \    
+mainly on the plain.
+
+The rain in Spain falls
+\ mainly on the plain.
+
+The rain in Spain falls
+    \ mainly on the plain.

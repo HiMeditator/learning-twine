@@ -1,0 +1,46 @@
+:: HTML-SVG-Attribute
+
+<<set _target = "ResultDisplay">>
+
+
+<audio data-passage="_target" controls>
+  <source src="./audio/wc4_begin.mp3" type="audio/mp3">
+</audio>
+会播放在引用 passage 中定义的音频内容
+The audio content defined in the referenced passage will be played.
+<img data-passage="_target" src="./img/head/01.png">
+从 passage 里获取图片代码或 Base64 数据并显示。
+The image code or Base64 data from the passage will be retrieved and displayed.
+
+@@color:red;
+注意以上文字描述是实际功能，但代码中还没有实现。
+Note that the above text describes the actual functionality, but it has not been implemented in the code yet.
+@@
+<hr>
+
+<image data-passage="_target" src="./img/head/01.png"/>
+<hr>
+<<nobr>>
+    <a data-passage="_target" data-setter="$result = 'From HTML-SVG-Attribute link'">Goto ResultDisplay</a><br>
+    <button data-passage="_target" data-setter="$result = 'From HTML-SVG-Attribute button'">Goto ResultDisplay</button>
+    <br><br>
+    <map name="map1">
+        <area shape="rect" coords="30,275,110,360" data-passage="_target" data-setter="$result = 'From HTML-SVG-Attribute, the house in the map.'" title="Goto ResultDisplay">
+    </map>
+    <img usemap="#map1" src="./img/map/01.png"><br>
+    点击地图中的房子 / Click the house in the map.
+<</nobr>>
+<hr>
+<<set _class="result">>
+<div sc-eval:class="_class">
+此处 div 使用了 sc-eval:class="_class"
+This div uses @class="_class"
+
+</div>
+
+<div @class="_class">
+此处 div 使用了 @class="_class"（语法糖）
+This div uses @class="_class"
+
+</div>
+
