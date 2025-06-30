@@ -9,6 +9,10 @@
     </p>
 </div>
 
+## 🌐 在线访问
+
+https://himeditator.github.io/learning-twine/
+
 ## 📝 背景知识
 
 本项目的内容基于SugarCube 官方文档 <a href="https://www.motoslave.net/sugarcube/2/docs/" target="_blank">SugarCube v2 Documentation</a> 编写。本项目只会编写对我个人来说需要实验的内容，不会编写所有内容。
@@ -21,10 +25,6 @@
 - **HTML**：超文本标记语言，用于构建网页结构的基础语言。
 - **CSS**：层叠样式表，用来定义网页的布局和外观。
 - **JavaScript**：一种编程语言，用于实现网页上的交互功能。
-
-## 🌐 在线访问
-
-https://himeditator.github.io/learning-twine/
 
 ## 🚀 项目运行
 

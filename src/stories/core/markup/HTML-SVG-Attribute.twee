@@ -40,7 +40,7 @@ This div uses @class="_class"
 
 <div @class="_class">
 此处 div 使用了 @class="_class"（语法糖）
-This div uses @class="_class"
+This div uses @class="_class" (syntactic sugar)
 
 </div>
 
